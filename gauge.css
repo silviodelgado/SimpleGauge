@@ -24,8 +24,8 @@
 .gauge .gauge-indicator::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 12rem;
+  height: 12rem;
   border: 1rem solid #ff7878;
   border-left-color: transparent;
   border-top-color: transparent;
@@ -37,7 +37,7 @@
 }
 .gauge .gauge-title {
   position: absolute;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #0078c8;
   left: 50%;
   bottom: 0.25rem;

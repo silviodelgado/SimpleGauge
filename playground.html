@@ -6,64 +6,81 @@
     <meta name="Author" content="Interart.com">
     <title>Simple Gauge</title>
     <style>
-        * {
+        *, ::after, ::before {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        .container {
+            margin: 1rem 2rem;
         }
     </style>
     <link href="gauge.css" rel="stylesheet">
 </head>
 <body>
-    
-    <div id="gauge" data-min="0" data-max="200" data-initial="76"></div>
 
-    <br>
-    <hr>
+    <div class="container">
+        
+        <div id="gauge" data-min="0" data-max="200" data-initial="76"></div>
 
-    <button type="button" onclick="gauge.set('#gauge', -25)">Set -25</button>
-    <button type="button" onclick="gauge.set('#gauge', -10)">Set -10</button>
-    <button type="button" onclick="gauge.set('#gauge', 0)">Set 0</button>
-    <button type="button" onclick="gauge.set('#gauge', 1)">Set 1</button>
-    <button type="button" onclick="gauge.set('#gauge', 2)">Set 2</button>
-    <button type="button" onclick="gauge.set('#gauge', 25)">Set 25</button>
-    <button type="button" onclick="gauge.set('#gauge', 60)">Set 60</button>
-    <button type="button" onclick="gauge.set('#gauge', 100)">Set 100</button>
-    <button type="button" onclick="gauge.set('#gauge', 180)">Set 180</button>
-    <button type="button" onclick="gauge.set('#gauge', 200)">Set 200</button>
-    <button type="button" onclick="gauge.set('#gauge', 250)">Set 250</button>
-    <button type="button" onclick="gauge.reset('#gauge')">Reset</button>
-    
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
+        <br>
+        <hr>
 
-    <div id="gauge2" data-min="0" data-max="200" data-initial="48"></div>
+        <button type="button" onclick="gauge.set('#gauge', -25)">Set -25</button>
+        <button type="button" onclick="gauge.set('#gauge', -10)">Set -10</button>
+        <button type="button" onclick="gauge.set('#gauge', 0)">Set 0</button>
+        <button type="button" onclick="gauge.set('#gauge', 1)">Set 1</button>
+        <button type="button" onclick="gauge.set('#gauge', 2)">Set 2</button>
+        <button type="button" onclick="gauge.set('#gauge', 25)">Set 25</button>
+        <button type="button" onclick="gauge.set('#gauge', 60)">Set 60</button>
+        <button type="button" onclick="gauge.set('#gauge', 100)">Set 100</button>
+        <button type="button" onclick="gauge.set('#gauge', 180)">Set 180</button>
+        <button type="button" onclick="gauge.set('#gauge', 200)">Set 200</button>
+        <button type="button" onclick="gauge.set('#gauge', 250)">Set 250</button>
+        <button type="button" onclick="gauge.reset('#gauge')">Reset</button>
+        
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
 
-    <br>
-    <hr>
+        <div id="gauge2" data-min="0" data-max="200" data-initial="48"></div>
 
-    <button type="button" onclick="gauge.set('#gauge2', -25)">Set -25</button>
-    <button type="button" onclick="gauge.set('#gauge2', -10)">Set -10</button>
-    <button type="button" onclick="gauge.set('#gauge2', 0)">Set 0</button>
-    <button type="button" onclick="gauge.set('#gauge2', 1)">Set 1</button>
-    <button type="button" onclick="gauge.set('#gauge2', 2)">Set 2</button>
-    <button type="button" onclick="gauge.set('#gauge2', 25)">Set 25</button>
-    <button type="button" onclick="gauge.set('#gauge2', 60)">Set 60</button>
-    <button type="button" onclick="gauge.set('#gauge2', 100)">Set 100</button>
-    <button type="button" onclick="gauge.set('#gauge2', 180)">Set 180</button>
-    <button type="button" onclick="gauge.set('#gauge2', 200)">Set 200</button>
-    <button type="button" onclick="gauge.set('#gauge2', 250)">Set 250</button>
-    <button type="button" onclick="gauge.reset('#gauge2')">Reset</button>
+        <br>
+        <hr>
+
+        <button type="button" onclick="gauge.set('#gauge2', -25)">Set -25</button>
+        <button type="button" onclick="gauge.set('#gauge2', -10)">Set -10</button>
+        <button type="button" onclick="gauge.set('#gauge2', 0)">Set 0</button>
+        <button type="button" onclick="gauge.set('#gauge2', 1)">Set 1</button>
+        <button type="button" onclick="gauge.set('#gauge2', 2)">Set 2</button>
+        <button type="button" onclick="gauge.set('#gauge2', 25)">Set 25</button>
+        <button type="button" onclick="gauge.set('#gauge2', 60)">Set 60</button>
+        <button type="button" onclick="gauge.set('#gauge2', 100)">Set 100</button>
+        <button type="button" onclick="gauge.set('#gauge2', 180)">Set 180</button>
+        <button type="button" onclick="gauge.set('#gauge2', 200)">Set 200</button>
+        <button type="button" onclick="gauge.set('#gauge2', 250)">Set 250</button>
+        <button type="button" onclick="gauge.reset('#gauge2')">Reset</button>
+        
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
+
+        <div id="gauge3" data-min="0" data-max="1024" data-initial="714" data-caption="false"></div>
+
+    </div>
 
     <script src="gauge.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             gauge.init('#gauge');
             gauge.init('#gauge2');
+            gauge.init('#gauge3');
         });
     </script>
 </body>

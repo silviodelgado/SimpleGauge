@@ -52,8 +52,18 @@
     const update_gauge = () => {   
         container.dataset.current = values.current;
         degrees = Math.round((values.current / values.max) * 180);
-        title.innerText = values.current;
-        indicator.style.setProperty('--gauge-rotation', `${degrees}deg`);
+        if (container.dataset.caption && container.dataset.caption == 'false') {
+            title.innerText = '';
+        } else if (container.dataset.caption) {
+            title.innerHTML = container.dataset.caption;   
+        } else {
+            title.innerText = values.current;
+        }
+        if (values.min == values.max && values.min == values.current) {
+            indicator.style.setProperty('--gauge-rotation', `180deg`);
+        } else {
+            indicator.style.setProperty('--gauge-rotation', `${degrees}deg`);
+        }
     };
     
     const set = (selector, newCurrent) => {
