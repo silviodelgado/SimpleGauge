@@ -27,8 +27,8 @@
             console.error('Container \'' + selector + '\' not found.');
             return;
         }
-        values.min = container.dataset.min || 0;
-        values.max = container.dataset.max || 100;
+        values.min = parseInt(container.dataset.min || '0');
+        values.max = parseInt(container.dataset.max || '100');
         if (container.classList.contains('gauge-initializated')) {
             title = container.querySelector('.gauge-title');
             indicator = container.querySelector('.gauge-indicator');
@@ -37,7 +37,7 @@
 
     const init = (selector) => {
         load_container(selector);        
-        values.current = container.dataset.initial || 0;
+        values.current = parseInt(container.dataset.initial || '0');
         container.classList.add('gauge');
         indicator = document.createElement('div');
         indicator.classList.add('gauge-indicator');
@@ -51,6 +51,7 @@
     
     const update_gauge = () => {   
         container.dataset.current = values.current;
+        console.log('values', values);
         degrees = (values.current >= values.max) || (values.min == values.max && values.min == values.current)
             ?  180
             :  Math.round((values.current / values.max) * 180);
