@@ -51,7 +51,6 @@
     
     const update_gauge = () => {   
         container.dataset.current = values.current;
-        console.log('values', values);
         degrees = (values.current >= values.max) || (values.min == values.max && values.min == values.current)
             ?  180
             :  Math.round((values.current / values.max) * 180);
@@ -63,6 +62,18 @@
             title.innerText = values.current;
         }
         indicator.style.setProperty('--gauge-rotation', `${degrees}deg`);
+        ['gauge-1', 'gauge-2', 'gauge-3', 'gauge-4', 'gauge-5'].map((e) => indicator.classList.remove(e));
+        if (degrees <= (180 / 5)) {
+            indicator.classList.add('gauge-1');
+        } else if (degrees <= ((180 / 5) * 2)) {
+            indicator.classList.add('gauge-2');
+        } else if (degrees <= ((180 / 5) * 3)) {
+            indicator.classList.add('gauge-3');
+        } else if (degrees <= ((180 / 5) * 4)) {
+            indicator.classList.add('gauge-4');
+        } else if (degrees > ((180 / 5) * 4)) {
+            indicator.classList.add('gauge-5');
+        }
     };
     
     const set = (selector, newCurrent) => {

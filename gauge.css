@@ -1,9 +1,3 @@
-/*!
- * SimpleGauge v1.0 - Vanilla Javascript chart
- * Copyright 2024 Silvio Delgado (https://github.com/silviodelgado)
- * Licensed under MIT (https://opensource.org/licenses/MIT)
- * https://github.com/silviodelgado/SimpleGauge
-*/
 .gauge {
   position: relative;
   width: 12rem;
@@ -16,7 +10,7 @@
   width: 12rem;
   height: 12rem;
   background: transparent;
-  border: 1rem solid #aaf5a0;
+  border: 1rem solid #ddd;
   border-radius: 50%;
   transition: transform 0.2s ease;
   transform: rotate(var(--gauge-rotation));
@@ -26,7 +20,7 @@
   position: absolute;
   width: 12rem;
   height: 12rem;
-  border: 1rem solid #ff7878;
+  border: 1rem solid transparent;
   border-left-color: transparent;
   border-top-color: transparent;
   border-radius: 50%;
@@ -34,6 +28,26 @@
   top: -1rem;
   transform: rotate(45deg);
   z-index: 2;
+}
+.gauge .gauge-indicator.gauge-1::before {
+  border-right-color: rgb(0, 110, 255);
+  border-bottom-color: rgb(0, 110, 255);
+}
+.gauge .gauge-indicator.gauge-2::before {
+  border-right-color: rgb(22, 168, 22);
+  border-bottom-color: rgb(22, 168, 22);
+}
+.gauge .gauge-indicator.gauge-3::before {
+  border-right-color: rgb(224, 224, 10);
+  border-bottom-color: rgb(224, 224, 10);
+}
+.gauge .gauge-indicator.gauge-4::before {
+  border-right-color: orange;
+  border-bottom-color: orange;
+}
+.gauge .gauge-indicator.gauge-5::before {
+  border-right-color: rgb(218, 61, 61);
+  border-bottom-color: rgb(218, 61, 61);
 }
 .gauge .gauge-title {
   position: absolute;

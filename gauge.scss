@@ -1,7 +1,7 @@
 $gauge-width: 12rem;
 $indicator-width: 1rem;
 $indicator-color: #ff7878;
-$indicator-base-color: #aaf5a0;
+$indicator-base-color: #ddd;// #aaf5a0;
 $title-color: #0078c8;
 $title-size: 1.5rem;
 
@@ -27,7 +27,7 @@ $title-size: 1.5rem;
             position: absolute;
             width: $gauge-width;
             height: $gauge-width;
-            border: $indicator-width solid $indicator-color;
+            border: $indicator-width solid transparent;// $indicator-color;
             border-left-color: transparent;
             border-top-color: transparent;
             border-radius: 50%;
@@ -35,6 +35,37 @@ $title-size: 1.5rem;
             top: -$indicator-width;
             transform: rotate(45deg);
             z-index: 2;
+        }
+
+        &.gauge-1 {
+            &::before {
+                border-right-color: rgb(0, 110, 255);
+                border-bottom-color: rgb(0, 110, 255);
+            }
+        }
+        &.gauge-2 {
+            &::before {
+                border-right-color: rgb(22, 168, 22);
+                border-bottom-color: rgb(22, 168, 22);
+            }
+        }
+        &.gauge-3 {
+            &::before {
+                border-right-color: rgb(224, 224, 10);
+                border-bottom-color: rgb(224, 224, 10);
+            }
+        }
+        &.gauge-4 {
+            &::before {
+                border-right-color: orange;
+                border-bottom-color: orange;
+            }
+        }
+        &.gauge-5 {
+            &::before {
+                border-right-color: rgb(218, 61, 61);
+                border-bottom-color: rgb(218, 61, 61);
+            }
         }
     }
 
